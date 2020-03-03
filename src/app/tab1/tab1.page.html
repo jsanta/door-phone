@@ -7,11 +7,21 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+  <!-- <app-explore-container name="Tab 1 page"></app-explore-container> -->
+  <ion-grid>
+    <ion-row class="ion-align-items-center">
+      <ion-col>
+        <ion-button (click)="callEntrance()">Acceso entrada</ion-button>
+        <p class="ion-text-center"><span>Último acceso:</span> --- sin información ---</p>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-align-items-center">
+      <ion-col>
+        <ion-button (click)="callExit()">Acceso salida</ion-button>
+        <p class="ion-text-center"><span>Última salida:</span> --- sin información ---</p>
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
 </ion-content>

@@ -5,6 +5,8 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Tab1Page } from './tab1.page';
 import { ExploreContainerComponentModule } from '../explore-container/explore-container.module';
+import { CallService } from '../services/call.service';
+import { ConfigService } from '../services/config.service';
 
 @NgModule({
   imports: [
@@ -14,6 +16,10 @@ import { ExploreContainerComponentModule } from '../explore-container/explore-co
     ExploreContainerComponentModule,
     RouterModule.forChild([{ path: '', component: Tab1Page }])
   ],
-  declarations: [Tab1Page]
+  declarations: [Tab1Page],
+  providers: [
+    ConfigService,
+    CallService
+  ]
 })
 export class Tab1PageModule {}
