@@ -7,11 +7,15 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <p class="ion-padding">Ingrese los teléfonos de ambos accesos (Acceso Entrada y Acceso Salida).</p>
+  <ion-item>
+    <ion-label position="stacked">Teléfono de Acceso entrada</ion-label>
+    <ion-input type="tel" [(ngModel)]="entrancePhone"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Teléfono de Acceso salida</ion-label>
+    <ion-input type="tel" [(ngModel)]="exitPhone"></ion-input>
+  </ion-item>
+  <ion-button expand="block" size="large" (click)="saveConfig()">Guardar configuración</ion-button>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
 </ion-content>

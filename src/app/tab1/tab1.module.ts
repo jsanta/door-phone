@@ -1,3 +1,4 @@
+import { StorageService } from './../services/storage.service';
 import { IonicModule } from '@ionic/angular';
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
@@ -18,8 +19,8 @@ import { ConfigService } from '../services/config.service';
   ],
   declarations: [Tab1Page],
   providers: [
-    ConfigService,
-    CallService
+    CallService,
+    StorageService
   ]
 })
 export class Tab1PageModule {}
