@@ -1,3 +1,4 @@
+import { StorageService } from './../services/storage.service';
 import { Component, OnInit } from '@angular/core';
 import { CallService } from '../services/call.service';
 import { ConfigService } from '../services/config.service';
@@ -13,11 +14,13 @@ export class Tab1Page implements OnInit {
 
   constructor(
     private callService: CallService,
-    private configService: ConfigService) { }
+    public storageService: StorageService) {
 
-  ngOnInit(): void {
-    this.entrancePhone = this.configService.entrancePhone;
-    this.exitPhone = this.configService.exitPhone;
+    }
+
+  async ngOnInit() {
+    this.entrancePhone = await this.storageService.getData('entrancePhone');
+    this.exitPhone = await this.storageService.getData('exitPhone');
   }
 
   callEntrance() {
